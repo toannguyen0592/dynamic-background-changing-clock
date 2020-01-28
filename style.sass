@@ -3,7 +3,8 @@ $sunrise: linear-gradient(0deg, rgba(219, 152, 52, 1) 15%, rgba(175, 228, 255, 1
 $nighttime: linear-gradient(0deg, rgba(6, 17, 34, 1) 15%, rgba(35, 54, 83, 1) 77%);
 
 $groundDay: linear-gradient(0deg, rgba(55,170,79,1) 11%, rgba(150,255,71,1) 77%);
-$groundNight: linear-gradient(0deg, rgba(7,25,11,1) 11%, rgba(48,84,21,1) 77%);
+$groundNight: linear-gradient(0deg, rgba(3,15,3,1) 18%, rgba(25,91,97,1) 94%);
+
 
 \:root 
     --sunrise: #{$sunrise};
@@ -32,22 +33,24 @@ body
     justify-content: center;
     overflow: hidden;
 
-.ground
-    background: var(--ground-day);
-    height: 50vh;
+#ground
+    background-image: url('assets/background.svg');
+    height: 100;
     width: 100%;
     position: absolute;
     bottom: 0;
+
+#background
+    
 .sunMoon
+    margin-top: 100px;
     border-radius: 50%;
-    height: 700px;
-    width: 700px;
+    height: 800px;
+    width: 800px;
     position: absolute;
     // top: 50%;
     // left: 50%;
-    transform: translate(-50%,-50%);
-    // border: 1px solid black;
-    // border-radius: 50%;
+    // transform: translate(-50%,-50%);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,11 +60,11 @@ body
     width: 100px;
     border-radius: 50%;
 .sun
-    background: radial-gradient(circle, rgba(249,250,23,1) 53%, rgba(240,175,60,1) 77%);
+    background-image: url('assets/sun.svg');
     box-shadow: 0px 0px 100px 100px rgba(245,245,196,1);
 .moon
     background: #ffffff;
-    box-shadow: 0px 0px 100px 50px rgba(233,245,243,1);
+    box-shadow: 0px 0px 50px 20px rgba(233,245,243,1);
 .time-date
     color: #ffffff;
     font-family: sans-serif;

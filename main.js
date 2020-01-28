@@ -3,7 +3,8 @@ const time = document.getElementById('time'),
     date = document.getElementById('date'),
     greeting = document.getElementById('greeting'),
     background = document.getElementById('background'),
-    sunMoon = document.getElementById('sunmoon');
+    sunMoon = document.getElementById('sunmoon'),
+    ground = document.getElementById('ground');
 
 
 
@@ -46,21 +47,26 @@ function setBgGreeting() {
     let hour = today.getHours();
 
     if (hour >= 6 && hour <= 7) {
-        background.style.backgroundColor = "var(--sunrise)";
+        background.style.background = "var(--sunrise)";
+        ground.style.background = "var(--ground-night)";
         greeting.textContent = 'Good Morning';
     } else if (hour > 7 && hour < 12) {
         // Morning
-        background.style.backgroundColor = "var(--daytime)";
+        background.style.background = "var(--daytime)";
+        ground.style.background = "var(--ground-day)";
         greeting.textContent = 'Good Morning';
     } else if (hour > 12 && hour < 18) {
         // Afternoon
-        background.style.backgroundColor = "var(--daytime)";
+        background.style.background = "var(--daytime)";
+        ground.style.background = "var(--ground-day)";
         greeting.textContent = 'Good Afternoon';
     } else if (hour >= 18 && hour <= 19) {
-        background.style.backgroundColor = "var(--sunset)";
+        background.style.background = "var(--sunset)";
+        ground.style.background = "var(--ground-night)";
         greeting.textContent = 'Good Evening';
     } else {
-        background.style.backgroundColor = "var(--nighttime)";
+        background.style.background = "var(--nighttime)";
+        ground.style.background = "var(--ground-night)";
         greeting.textContent = 'Good Night';
     }
 }
@@ -71,8 +77,6 @@ function rotateSunMoon() {
         hr = today.getHours();
     // hrDegree = ((hr / 12) * 360) + 90;
     // sunMoon.style.transform = `rotate(${hrDegree}deg)`;
-
-
 
     switch (hr) {
         case 0:
