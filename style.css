@@ -3,8 +3,6 @@
   --daytime: linear-gradient(0deg, #f0faff 15%, #6ea9ff 93%);
   --sunset: linear-gradient(0deg, #ecd550 15%, #ff7c6e 93%);
   --nighttime: linear-gradient(0deg, #061122 15%, #233653 77%);
-  --ground-day: linear-gradient(0deg, #37aa4f 11%, #96ff47 77%);
-  --ground-night: linear-gradient(0deg, #030f03 18%, #195b61 94%);
 }
 
 * {
@@ -37,12 +35,8 @@ body {
   overflow: hidden;
 }
 
-#ground {
-  background-image: url("assets/background.svg");
-  height: 100;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+#background {
+  background: url("assets/midground.svg");
 }
 
 .sunMoon {

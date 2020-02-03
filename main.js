@@ -48,25 +48,23 @@ function setBgGreeting() {
 
     if (hour >= 6 && hour <= 7) {
         background.style.background = "var(--sunrise)";
-        ground.style.background = "var(--ground-night)";
+
         greeting.textContent = 'Good Morning';
     } else if (hour > 7 && hour < 12) {
         // Morning
         background.style.background = "var(--daytime)";
-        ground.style.background = "var(--ground-day)";
         greeting.textContent = 'Good Morning';
     } else if (hour > 12 && hour < 18) {
         // Afternoon
         background.style.background = "var(--daytime)";
-        ground.style.background = "var(--ground-day)";
         greeting.textContent = 'Good Afternoon';
     } else if (hour >= 18 && hour <= 19) {
         background.style.background = "var(--sunset)";
-        ground.style.background = "var(--ground-night)";
+
         greeting.textContent = 'Good Evening';
     } else {
         background.style.background = "var(--nighttime)";
-        ground.style.background = "var(--ground-night)";
+
         greeting.textContent = 'Good Night';
     }
 }
