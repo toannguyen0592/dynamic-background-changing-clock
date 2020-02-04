@@ -45,24 +45,40 @@ function showDate() {
 function setBgGreeting() {
     let today = new Date();
     let hour = today.getHours();
+    let cloud = document.getElementById('cloud');
 
-    if (hour >= 6 && hour <= 7) {
+    if (hour > 6 && hour < 18) {
+        cloud.style.backgroundImage = "url('assets/cloudfront.svg'), url('assets/sky.svg')";
+        ground.style.backgroundImage = "url('assets/foreground.svg'), url('assets/midground.svg'), url('assets/background.svg'), url('assets/mountain.svg')";
+    } else {
+        cloud.style.backgroundImage = "url('assets/stars.svg')";
+        document.getElementById('time-date').style.color = "#ffffff";
+        ground.style.backgroundImage = "url('assets/foreground-night.svg'), url('assets/midground-night.svg'), url('assets/background-night.svg'), url('assets/mountain-night.svg')";
+    }
+
+
+    if (hour >= 0 && hour < 6) {
+        // Late Night
+        background.style.background = "var(--nighttime)";
+        greeting.textContent = 'Good Night';
+    } else if (hour >= 6 && hour <= 7) {
+        // Sunrise
         background.style.background = "var(--sunrise)";
-
         greeting.textContent = 'Good Morning';
     } else if (hour > 7 && hour < 12) {
         // Morning
         background.style.background = "var(--daytime)";
         greeting.textContent = 'Good Morning';
-    } else if (hour > 12 && hour < 18) {
+    } else if (hour >= 12 && hour < 18) {
         // Afternoon
         background.style.background = "var(--daytime)";
         greeting.textContent = 'Good Afternoon';
-    } else if (hour >= 18 && hour <= 19) {
+    } else if (hour >= 18 && hour < 19) {
+        // Sunset
         background.style.background = "var(--sunset)";
-
         greeting.textContent = 'Good Evening';
-    } else {
+    } else if (hour >= 19 && hour <= 24) {
+        // Night
         background.style.background = "var(--nighttime)";
 
         greeting.textContent = 'Good Night';
@@ -73,8 +89,6 @@ function setBgGreeting() {
 function rotateSunMoon() {
     let today = new Date(),
         hr = today.getHours();
-    // hrDegree = ((hr / 12) * 360) + 90;
-    // sunMoon.style.transform = `rotate(${hrDegree}deg)`;
 
     switch (hr) {
         case 0:

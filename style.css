@@ -12,56 +12,92 @@
 
 body {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .background {
   background: var(--daytime);
-  max-width: 100%;
-  max-height: 100%;
-  height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
+  max-height: 100vh;
+  height: 100%;
+  width: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
 }
 
-#background {
-  background: url("assets/midground.svg");
+#ground {
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("assets/foreground.svg"), url("assets/midground.svg"), url("assets/background.svg"), url("assets/mountain.svg");
+  background-position: bottom, bottom, bottom, bottom center;
+  background-repeat: no-repeat;
+}
+
+.cloud {
+  background: url("assets/cloudfront.svg"), url("assets/sky.svg");
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  -webkit-animation: animate 40s linear infinite;
+          animation: animate 40s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes animate {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }
 
 .sunMoon {
-  margin-top: 100px;
   border-radius: 50%;
   height: 800px;
   width: 800px;
   position: absolute;
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.sun,
-.moon {
+.sun, .moon {
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -69,22 +105,18 @@ body {
 
 .sun {
   background-image: url("assets/sun.svg");
-  -webkit-box-shadow: 0px 0px 100px 100px #f5f5c4;
-  box-shadow: 0px 0px 100px 100px #f5f5c4;
 }
 
 .moon {
-  background: #ffffff;
-  -webkit-box-shadow: 0px 0px 50px 20px #e9f5f3;
-  box-shadow: 0px 0px 50px 20px #e9f5f3;
+  background-image: url("assets/moon.svg");
 }
 
 .time-date {
-  color: #ffffff;
+  color: #444444;
   font-family: sans-serif;
   text-align: center;
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 
 #time {
@@ -94,9 +126,10 @@ body {
 }
 
 #date {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   letter-spacing: 0.5rem;
+  margin-bottom: 20px;
 }
 
 #greeting {
@@ -105,5 +138,4 @@ body {
   letter-spacing: 0.5rem;
   text-transform: uppercase;
 }
-
 /*# sourceMappingURL=style.css.map */
