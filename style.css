@@ -13,7 +13,7 @@
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .background {
@@ -45,6 +45,12 @@ body {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 1500px) {
+  #ground {
+    background-size: contain;
+  }
+}
+
 .cloud {
   background: url("assets/cloudfront.svg"), url("assets/sky.svg");
   background-position: 0 50%;
@@ -52,8 +58,6 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
   -webkit-animation: animate 40s linear infinite;
           animation: animate 40s linear infinite;
 }
@@ -78,8 +82,8 @@ body {
 
 .sunMoon {
   border-radius: 50%;
-  height: 800px;
-  width: 800px;
+  height: 750px;
+  width: 750px;
   position: absolute;
   z-index: 0;
   display: -webkit-box;
@@ -97,10 +101,24 @@ body {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 900px) {
+  .sunMoon {
+    height: 600px;
+    width: 600px;
+  }
+}
+
 .sun, .moon {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .sun, .moon {
+    height: 75px;
+    width: 75px;
+  }
 }
 
 .sun {
@@ -111,18 +129,67 @@ body {
   background-image: url("assets/moon.svg");
 }
 
-.time-date {
-  color: #444444;
-  font-family: sans-serif;
-  text-align: center;
+.content {
+  margin: 25px 0;
   position: absolute;
   z-index: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333333;
+  width: 75%;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+}
+
+.content-child {
+  padding: 25px;
+  -webkit-box-flex: 50;
+      -ms-flex: 50;
+          flex: 50;
+}
+
+.weather-app {
+  background: rgba(38, 58, 69, 0.75);
+  border-radius: 2em;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+  .weather-app {
+    border: none;
+  }
+}
+
+.time-date {
+  text-align: center;
 }
 
 #time {
   font-size: 4rem;
   font-weight: 600;
   letter-spacing: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  #time {
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+  }
 }
 
 #date {
@@ -132,10 +199,24 @@ body {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 900px) {
+  #date {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+  }
+}
+
 #greeting {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 900px) {
+  #greeting {
+    font-size: 1.75rem;
+    letter-spacing: 0.25rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.location,
+.icon,
+.temperature {
+    margin: 10px auto;
+}
+
+.degree-sect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.degree-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.degree-sect #divider {
+    margin: 0 20px;
+}
+
+.degree-sect span {
+    font-size: 1.5em;
+}
+
+.weather-description {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.weather-info p {
+    font-weight: 550;
+    font-size: 1em;
+    margin: 0 10px;
+}

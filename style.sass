@@ -20,7 +20,7 @@ $nighttime: linear-gradient(0deg, rgba(6, 17, 34, 1) 15%, rgba(35, 54, 83, 1) 77
     padding: 0; 
 body 
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 .background
     background: var(--daytime);
     max-width: 100vw;
@@ -41,6 +41,9 @@ body
     background-image: url('assets/foreground.svg'), url('assets/midground.svg'), url('assets/background.svg'), url('assets/mountain.svg');
     background-position: bottom, bottom, bottom, bottom center;
     background-repeat: no-repeat;
+    @media screen and (max-width: 1500px)
+        background-size: contain;
+    
 
 .cloud
     background: url('assets/cloudfront.svg'), url('assets/sky.svg');
@@ -49,7 +52,6 @@ body
     background-size: cover;
     height: 100vh;
     width: 100vw;
-    transition: 1s ease-in-out;
     animation: animate 40s linear infinite;
 
 @keyframes animate
@@ -60,39 +62,78 @@ body
 
 .sunMoon
     border-radius: 50%;
-    height: 800px;
-    width: 800px;
+    height: 750px;
+    width: 750px;
     position: absolute;
     z-index: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 900px)
+        height: 600px;
+        width: 600px;
 .sun,.moon
     height: 100px;
     width: 100px;
     border-radius: 50%;
+    @media screen and (max-width: 900px)
+        height: 75px;
+        width: 75px;
 .sun
     background-image: url('assets/sun.svg');
 .moon
     background-image: url('assets/moon.svg');
-.time-date
-    color: #444444;
-    font-family: sans-serif;
-    text-align: center;
+
+.content
+    margin: 25px 0;
     position: absolute;
     z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+    width: 75%;
+    @media screen and (max-width: 900px) 
+        flex-direction: column;
+        width: 100%;
+
+.content-child
+    padding: 25px;
+    flex: 50;
+
+.weather-app
+    background: rgba(38,58,69,0.75);
+    border-radius: 2em;
+    color: #ffffff;
+    @media screen and (max-width: 900px)
+        border: none;
+
+.time-date
+    text-align: center;
+
 #time
     font-size: 4rem;
     font-weight: 600;
     letter-spacing: 1rem;
+    @media screen and (max-width: 900px)
+        font-size: 3.5rem;
+        letter-spacing: 0.5rem;
 #date
     font-size: 2.5rem;
     font-weight: 500;
     letter-spacing: 0.5rem
     margin-bottom: 20px;
+    @media screen and (max-width: 900px)
+        font-size: 2rem;
+        letter-spacing: 0.25rem;
 #greeting
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
+    @media screen and (max-width: 900px)
+        font-size: 1.75rem;
+        letter-spacing: 0.25rem;
+
+

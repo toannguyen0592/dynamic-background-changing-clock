@@ -12,8 +12,8 @@ const time = document.getElementById('time'),
 function showTime() {
     let today = new Date();
     let hour = today.getHours(),
-        min = today.getMinutes(),
-        sec = today.getSeconds();
+        min = today.getMinutes();
+
 
     // Set AM or PM
     const amPm = hour >= 12 ? 'PM' : 'AM';
@@ -22,7 +22,7 @@ function showTime() {
     hour = hour % 12 || 12;
 
     // Output Time
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span></span>${amPm}`;
 
     setTimeout(showTime, 1000);
 }
@@ -52,7 +52,7 @@ function setBgGreeting() {
         ground.style.backgroundImage = "url('assets/foreground.svg'), url('assets/midground.svg'), url('assets/background.svg'), url('assets/mountain.svg')";
     } else {
         cloud.style.backgroundImage = "url('assets/stars.svg')";
-        document.getElementById('time-date').style.color = "#ffffff";
+        document.getElementById('content').style.color = "#ffffff";
         ground.style.backgroundImage = "url('assets/foreground-night.svg'), url('assets/midground-night.svg'), url('assets/background-night.svg'), url('assets/mountain-night.svg')";
     }
 
