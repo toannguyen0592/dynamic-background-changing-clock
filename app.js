@@ -1,6 +1,7 @@
 // Get longitude and latitude of current location
 window.addEventListener('load', function () {
-    let long,
+    let
+        long,
         lat,
         tempDescription = document.querySelector('.weather-description'),
         tempDegreeF = document.getElementById('fahrenheit'),

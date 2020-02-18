@@ -85,8 +85,14 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
         <script src="skycons.js"></script>
+        <script src="config.js"></script>
         <script src="app.js"></script>
-        <script src="https://maps.google.com/maps/api/js?key=AIzaSyDUOx1RP7DpE8URsvknoKsd0bHesL1Cc7M"></script>
+        <script>
+            let scriptElement = document.createElement("script"),
+                key = config.MY_KEY;
+            scriptElement.src = "https://maps.google.com/maps/api/js?key=" + key;
+            document.body.appendChild(scriptElement);
+        </script>
     </body>
 
 </html>
